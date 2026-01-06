@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - HMA Connect
+    </title>
+    <style>
+        body { font-family: sans-serif; background: #1d9bf0; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .login-card { background: white; padding: 40px; border-radius: 15px; width: 300px; text-align: center; }
+        input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
+        button { width: 100%; background: #000; color: white; border: none; padding: 10px; border-radius: 20px; font-weight: bold; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <h1>PySocial</h1>
+        <p>Log in or Sign up</p>
+        <form action="/login_action" method="post" onsubmit="return validateAge()">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="number" id="age_input" name="age" placeholder="Age" required>
+            <button type="submit">Continue</button>
+        </form>
+    </div>
+
+    <script>
+        function validateAge() {
+            const age = document.getElementById('age_input').value;
+            if (age < 13) {
+                alert("You must be 13 or older to join!");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
